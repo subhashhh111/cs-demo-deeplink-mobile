@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-dark',
   templateUrl: './dark.page.html',
-  styleUrls: ['./dark.page.scss'],
+  styleUrls: ['./dark.page.scss']
 })
-export class DarkPage implements OnInit {
+export class DarkPage {
+  constructor(private navController: NavController) {}
 
-  constructor() { }
-
-  ngOnInit() {
+  previous() {
+    this.navController.navigateBack('/black');
   }
 
+  next() {
+    this.navController.navigateForward('/puer');
+  }
 }

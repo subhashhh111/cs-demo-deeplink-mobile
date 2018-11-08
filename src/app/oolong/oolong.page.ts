@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-oolong',
   templateUrl: './oolong.page.html',
-  styleUrls: ['./oolong.page.scss'],
+  styleUrls: ['./oolong.page.scss']
 })
-export class OolongPage implements OnInit {
+export class OolongPage {
+  constructor(private navController: NavController) {}
 
-  constructor() { }
-
-  ngOnInit() {
+  previous() {
+    this.navController.navigateBack('/green');
   }
 
+  next() {
+    this.navController.navigateForward('/black');
+  }
 }

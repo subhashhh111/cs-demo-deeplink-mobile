@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-yellow',
   templateUrl: './yellow.page.html',
-  styleUrls: ['./yellow.page.scss'],
+  styleUrls: ['./yellow.page.scss']
 })
-export class YellowPage implements OnInit {
+export class YellowPage {
+  constructor(private navController: NavController) {}
 
-  constructor() { }
-
-  ngOnInit() {
+  previous() {
+    this.navController.navigateBack('/white');
   }
 
+  next() {
+    this.navController.navigateForward('/green');
+  }
 }

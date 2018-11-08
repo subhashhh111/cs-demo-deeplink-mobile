@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-herbal',
   templateUrl: './herbal.page.html',
-  styleUrls: ['./herbal.page.scss'],
+  styleUrls: ['./herbal.page.scss']
 })
-export class HerbalPage implements OnInit {
+export class HerbalPage {
+  constructor(private navController: NavController) {}
 
-  constructor() { }
-
-  ngOnInit() {
+  previous() {
+    this.navController.navigateBack('/puer');
   }
 
+  next() {
+    this.navController.navigateForward('/white');
+  }
 }

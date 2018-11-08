@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-puer',
   templateUrl: './puer.page.html',
-  styleUrls: ['./puer.page.scss'],
+  styleUrls: ['./puer.page.scss']
 })
-export class PuerPage implements OnInit {
+export class PuerPage {
+  constructor(private navController: NavController) {}
 
-  constructor() { }
-
-  ngOnInit() {
+  previous() {
+    this.navController.navigateBack('/dark');
   }
 
+  next() {
+    this.navController.navigateForward('/herbal');
+  }
 }

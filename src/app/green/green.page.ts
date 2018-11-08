@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-green',
   templateUrl: './green.page.html',
-  styleUrls: ['./green.page.scss'],
+  styleUrls: ['./green.page.scss']
 })
-export class GreenPage implements OnInit {
+export class GreenPage {
+  constructor(private navController: NavController) {}
 
-  constructor() { }
-
-  ngOnInit() {
+  previous() {
+    this.navController.navigateBack('/yellow');
   }
 
+  next() {
+    this.navController.navigateForward('/oolong');
+  }
 }

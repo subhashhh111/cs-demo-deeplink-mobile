@@ -2,12 +2,12 @@
   <ion-toolbar color="primary">
     <ion-title>Herbal Infusions</ion-title>
     <ion-buttons slot="start">
-      <ion-button icon-only href="/puer">
+      <ion-button icon-only (click)="previous()">
         <ion-icon name="arrow-back"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button icon-only href="/white">
+      <ion-button icon-only (click)="next()">
         <ion-icon name="arrow-forward"></ion-icon>
       </ion-button>
     </ion-buttons>
