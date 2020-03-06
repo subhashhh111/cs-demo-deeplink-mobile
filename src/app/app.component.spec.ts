@@ -4,7 +4,7 @@ import { NavController } from '@ionic/angular';
 import { of } from 'rxjs';
 
 import { Platform } from '@ionic/angular';
-import { Deeplinks } from '@ionic-native/deeplinks/ngx';
+import { Deeplinks } from '@ionic-enterprise/deeplinks/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 

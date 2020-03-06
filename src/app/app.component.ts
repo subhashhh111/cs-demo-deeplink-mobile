@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Deeplinks } from '@ionic-native/deeplinks/ngx';
+import { Deeplinks } from '@ionic-enterprise/deeplinks/ngx';
 import { NavController, Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -31,17 +31,18 @@ export class AppComponent {
   private setupDeepLinks() {
     this.deeplinks
       .route({
-        '/black': 'black',
-        '/dark': 'dark',
-        '/green': 'green',
-        '/herbal': 'herbal',
-        '/oolong': 'oolong',
-        '/puer': 'puer',
-        '/white': 'white',
-        '/yellow': 'yellow'
+        '/black': '/black',
+        '/dark': '/dark',
+        '/green': '/green',
+        '/herbal': '/herbal',
+        '/oolong': '/oolong',
+        '/puer': '/puer',
+        '/white': '/white',
+        '/yellow': '/yellow'
       })
       .subscribe(
         match => {
+          console.log('we have a deep link', match);
           this.navController.navigateRoot(`/${match.$route}`);
         },
         nomatch => {
